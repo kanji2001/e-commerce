@@ -1,5 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 
 const user = {
     name: 'Tom Cook',
@@ -57,6 +58,7 @@ const Navbar = ({ children }) => {
                             </div>
                             <div className="hidden md:block">
                                 <div className="ml-4 flex items-center md:ml-6">
+                                <Link to="/cart">
                                     <button
                                         type="button"
                                         className="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500"
@@ -65,6 +67,7 @@ const Navbar = ({ children }) => {
                                         <span className="sr-only">View notifications</span>
                                         <ShoppingCartIcon aria-hidden="true" className="size-6" />
                                     </button>
+                                    </Link>
                                     <span className="inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 mb-5 -ml-3 text-xs font-medium text-gray-400 inset-ring inset-ring-gray-400/20">
                                         3
                                     </span>
@@ -141,14 +144,14 @@ const Navbar = ({ children }) => {
                                     <div className="text-base/5 font-medium text-white">{user.name}</div>
                                     <div className="text-sm font-medium text-gray-400">{user.email}</div>
                                 </div>
+                                <Link to="/cart">
                                 <button
                                     type="button"
                                     className="relative ml-auto shrink-0 rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500"
                                 >
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">View notifications</span>
                                     <ShoppingCartIcon aria-hidden="true" className="size-6" />
                                 </button>
+                                </Link>
                                 <span className="inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 mb-5 -ml-2 text-xs font-medium text-gray-400 inset-ring inset-ring-gray-400/20">
                                     3
                                 </span>

@@ -1,6 +1,9 @@
 import './App.css'
+import { CartPage } from './pages/CartPage';
+import Checkout from './pages/Checkout';
 import Home from './pages/Home'
 import LoginPage from './pages/LoginPage'
+import { ProductDetailPage } from './pages/ProductDetailPage';
 import SignupPage from './pages/SignupPage'
 import {
   createBrowserRouter,
@@ -12,15 +15,27 @@ import {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: '/login',
-    element: <LoginPage/>,
+    element: <LoginPage />,
   },
   {
     path: '/signup',
-    element: <SignupPage/>,
+    element: <SignupPage />,
+  },
+  {
+    path: '/cart',
+    element: <CartPage />,
+  },
+  {
+    path: '/checkout',
+    element: <Checkout />,
+  },
+  {
+    path: '/product-detail',
+    element: <ProductDetailPage />,
   },
 ]);
 
@@ -28,7 +43,7 @@ function App() {
 
   return (
     <>
-     <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
   )
 }
